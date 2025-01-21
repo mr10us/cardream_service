@@ -1,0 +1,372 @@
+/* –––––––––– HERO ––––––––– */
+
+section.hero {
+  position: relative;
+  width: 100%;
+}
+
+section.hero .hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 60%;
+}
+section.hero .hero__content::before {
+  content: attr(data-title);
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14rem;
+  line-height: 1;
+  text-transform: capitalize;
+  z-index: -1;
+  opacity: 0.03;
+  font-weight: 900;
+}
+section.hero .hero__content h1 {
+  font-size: var(--text-4xl);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+section.hero .hero__content h1 > span {
+  color: var(--color-primary);
+}
+
+section.hero .hero__content p {
+  width: 70%;
+  font-size: var(--text-lg);
+  color: var(--color-black);
+  font-weight: 500;
+}
+section.hero .hero__content p strong {
+  font-weight: 800;
+}
+
+/* –––––––––– BANNER ––––––––– */
+
+section.banner {
+  container-type: inline-size;
+  position: relative;
+  padding: 2rem;
+  background-color: var(--color-primary);
+  isolation: isolate;
+}
+section.banner .container {
+  display: grid;
+  gap: 1rem;
+}
+section.banner .container > img {
+  position: absolute;
+  bottom: -20px;
+  right: 2rem;
+  width: 40%;
+  object-fit: contain;
+  z-index: -1;
+}
+
+section.banner .container p {
+  color: var(--color-black);
+  font-size: var(--text-xl);
+  font-weight: 900;
+}
+
+section.banner .container form {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-white);
+  width: fit-content;
+  border-radius: 6px;
+}
+
+section.banner .container form input {
+  padding: 10px 20px;
+  font-size: var(--text-sm);
+  border: none;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+/* ––––––––––– ADVANTAGES ––––––––– */
+
+section.advantages {
+}
+
+section.advantages h2 {
+  color: var(--color-black);
+}
+section.advantages h2 > span {
+  color: var(--color-primary);
+}
+
+section.advantages > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-block: 2rem;
+}
+section.advantages > ul li {
+  display: grid;
+  grid-template-rows: repeat(2, 30px);
+  grid-template-columns: 60px 1fr;
+  column-gap: 0.5rem;
+  row-gap: 6px;
+
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  padding: 1rem;
+}
+section.advantages > ul li img {
+  width: 60px;
+  height: 60px;
+  grid-row: span 2;
+  grid-column: 1;
+}
+section.advantages > ul li h3 {
+  font-weight: 900;
+  font-size: var(--text-lg);
+  color: var(--color-secondary);
+}
+section.advantages > ul li p {
+  font-size: var(--text-xs);
+  color: var(--color-black);
+}
+
+section.advantages .advantages__slider-container {
+  position: relative;
+}
+
+section.advantages .advantages__slider-arrows {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+
+  transform: translateY(-50%);
+}
+section.advantages .advantages__slider-arrows button {
+  padding: 6px;
+  background-color: var(--color-secondary);
+
+  cursor: pointer;
+}
+section.advantages .advantages__slider-arrows button.slick-disabled {
+  background-color: transparent;
+  border: var(--color-white) solid 1px;
+
+  cursor: default;
+}
+section.advantages .advantages__slider-arrows .slick-prev {
+  transform: rotate(180deg);
+}
+
+section.advantages .advantages__slider-dots ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  margin-top: 2rem;
+}
+section.advantages .advantages__slider-dots ul li button {
+  width: 20px;
+  height: 20px;
+  color: transparent;
+  letter-spacing: -20rem;
+  line-height: 1;
+  background-color: var(--color-gray);
+  border: none;
+
+  cursor: pointer;
+}
+section.advantages .advantages__slider-dots ul li.slick-active button {
+  background-color: var(--color-secondary);
+}
+
+/* ––––––––––– ABOUT ––––––––– */
+
+section.about {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+section.about .container p {
+  margin-top: 10px;
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
+section.about .container ul {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+
+  margin-top: 80px;
+}
+
+/* –––––––––– REVIEWS ––––––––– */
+
+section.reviews {
+  background-color: var(--bg-secondary);
+}
+
+section.reviews .container h2 {
+  color: var(--color-black);
+  text-align: center;
+}
+
+section.reviews .container ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-block: 2rem;
+}
+section.reviews .container ul li {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 1rem;
+
+  padding: 18px;
+  border-radius: 6px;
+
+  background-color: var(--color-white);
+}
+section.reviews .container ul li > p {
+  grid-column: span 2;
+}
+section.reviews .container ul li > img {
+  border-radius: 3px;
+}
+section.reviews .container ul li div {
+  display: grid;
+  gap: 6px;
+}
+section.reviews .container ul li div span {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+section.reviews .container ul li div p {
+  font-weight: 700;
+  font-size: var(--text-xs);
+}
+section.reviews .container ul li div > span {
+  color: var(--color-gray);
+  font-size: var(--text-2xs);
+}
+
+section.reviews .container .btn {
+  margin-inline: auto;
+  padding-inline: 60px;
+}
+
+/* –––––––––– SECOND BANNER ––––––––– */
+
+section.banner.second-banner {
+  overflow: clip;
+}
+
+section.banner.second-banner .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+section.banner .container > img {
+  user-select: none;
+  pointer-events: none;
+}
+
+section.banner.second-banner .container > img[alt*="left"] {
+  left: 20%;
+  top: 25px;
+
+  width: 233px;
+
+  transform: translateX(-50%);
+}
+section.banner.second-banner .container > img[alt*="right"] {
+  right: 20%;
+  top: -25px;
+
+  width: 127px;
+
+  transform: translateX(50%);
+}
+
+/* ––––––––––– SERVE ––––––––– */
+
+section.serve h2 {
+  color: var(--color-black);
+  text-align: center;
+}
+
+section.serve ul {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  margin-block: 2rem;
+}
+
+section.serve ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+
+  background-color: var(--bg-secondary);
+}
+
+/* –––––––––––– THIRD BANNER ––––––––– */
+
+section.banner.third-banner ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-block: 2rem;
+}
+
+section.banner.third-banner ul li p {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-black);
+}
+section.banner.third-banner ul li p strong {
+  font-size: var(--text-3xl);
+  font-weight: 900;
+}
+
+/* ––––––––––– BENEFITS ––––––––– */
+
+section.benefits {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 100px;
+}
+section.benefits > img {
+  width: 45%;
+}
+section.benefits > div {
+  display: grid;
+  gap: 1rem;
+}
+section.benefits > div h2 {
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  color: var(--color-black);
+}
+section.benefits > div h3 {
+  font-weight: 900;
+  font-size: var(--text-lg);
+}
+section.benefits > div p {
+  font-size: var(--text-sm);
+}

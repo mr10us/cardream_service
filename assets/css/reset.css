@@ -1,0 +1,187 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  background-color: var(--bg-primary);
+
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+}
+
+a[href^="tel:+"] {
+  white-space: nowrap;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select,
+a {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #fffbee;
+
+  --color-red: #ff0000;
+  --color-green: #00ff00;
+  --color-black: #0c0c22;
+  --color-white: #ffffff;
+  --color-gray: #e2e2e2;
+
+  --btn-color-primary: #ffcf36;
+  --btn-color-secondary: #265070;
+
+  --color-primary: #ffcf36;
+  --color-secondary: #265684;
+
+  --color-primary-light: #fffbee;
+  --color-secondary-light: #e5f4ff;
+
+
+  --text-2xs: 12px;
+  --text-xs: clamp(0.75rem, 0.625rem + 0.3125vw, 0.875rem); /* 12-14 px */
+  --text-sm: clamp(0.875rem, 0.75rem + 0.3125vw, 1rem); /* 14-16 px */
+  --text-md: clamp(1rem, 0.875rem + 0.3125vw, 1.125rem); /* 16-18 px */
+  --text-lg: clamp(1.125rem, 1rem + 0.3125vw, 1.25rem); /* 18-20 px */
+  --text-xl: clamp(1.25rem, 1.1842rem + 0.2632vw, 1.5rem); /* 20-24 px */
+  --text-2xl: clamp(2.25rem, 2.0526rem + 0.7895vw, 3rem); /* 36-48 px */
+  --text-3xl: clamp(3rem, 2.9013rem + 0.3947vw, 3.375rem); /* 48-54 px */
+  --text-4xl: clamp(3.25rem, 3.0526rem + 0.7895vw, 4rem); /* 52-64 px */
+
+
+  --section-padding: 100px;
+  --shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+section {
+  padding: var(--section-padding) 0;
+}
+section > h2,
+section .container > h2 {
+  font-weight: 900;
+  font-size: var(--text-2xl);
+}
+
+.btn {
+  display: block;
+  width: fit-content;
+  padding: 12px 24px;
+
+  font-size: var(--text-md);
+  font-weight: 500;
+
+  border-radius: 6px;
+  border: none;
+
+  transition: background 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--btn-color-primary);
+  color: var(--color-white);
+}
+@media (hover:hover) {
+  .btn-primary:hover {
+    background-color: hsl(from var(--btn-color-primary) h s l / 70%);
+  }
+}
+
+.btn-secondary {
+  background-color: var(--btn-color-secondary);
+  color: var(--color-white);
+}
+@media (hover:hover) {
+  .btn-secondary:hover {
+    background-color: hsl(from var(--btn-color-secondary) h s l / 70%);
+  }
+}
+
+.contacts .phone {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+
+  color: hsl(from var(--color-white) h s l / 70%);
+  font-size: var(--text-2xs);
+  line-height: 1.2;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+@media (hover:hover) {
+  .contacts .phone:hover {
+    color: var(--color-white);
+  }
+}

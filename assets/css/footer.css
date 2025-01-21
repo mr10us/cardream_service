@@ -1,0 +1,118 @@
+footer {
+  padding-top: 60px;
+  background-color: hsl(from var(--color-primary) calc(h + 3) s calc(l + 3));
+}
+
+footer .container .footer__upper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, 80px);
+  column-gap: 3.8rem;
+
+  margin-bottom: 2rem;
+}
+footer .container .footer__upper form {
+  display: grid;
+  gap: 2rem;
+  align-self: flex-end;
+  grid-row: 2 / span 2;
+
+  color: var(--color-black);
+}
+footer .container .footer__upper form h3 {
+  font-size: var(--text-xl);
+  font-weight: 900;
+}
+footer .container .footer__upper form input {
+  padding: 10px 20px;
+  font-size: var(--text-sm);
+  border: none;
+  border-radius: 6px;
+}
+footer .container .footer__upper form button {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+footer .container .footer__upper nav {
+  grid-column: 2;
+  grid-row: span 2;
+  justify-self: center;
+}
+footer .container .footer__upper nav ul {
+  display: grid;
+  gap: 1rem;
+}
+footer .container .footer__upper nav ul li a {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+footer .container .footer__upper .socials {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  align-self: self-end;
+  gap: 1rem;
+
+  grid-row: 3;
+  grid-column: 2;
+}
+footer .container .footer__upper .socials a {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+@media (hover:hover) {
+  footer .container .footer__upper .socials a:hover {
+    opacity: 1.2;
+  }
+}
+
+footer .container .footer__upper .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  grid-row: span 3;
+  grid-column: 3;
+
+  color: var(--color-black);
+}
+
+footer .container .footer__upper .info h3 {
+  font-weight: 800;
+  font-size: var(--text-md);
+}
+footer .container .footer__upper .info p {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: var(--text-xs);
+}
+footer .container .footer__upper .info .contacts h3 {
+  margin-bottom: 10px;
+}
+footer .container .footer__upper .info .contacts .phone {
+  color: var(--color-black);
+}
+footer .container .footer__upper .info .contacts .phone:first-of-type {
+  margin-bottom: 5px;
+}
+
+
+footer .container .footer__lower {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  padding-block: 1.5rem;
+
+  border-top: 2px solid var(--color-white);
+}
+footer .container .footer__lower div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+}
