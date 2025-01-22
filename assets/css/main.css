@@ -272,7 +272,16 @@ section.banner.second-banner .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+}
+section.banner.second-banner .container > div {
+  display: grid;
+  gap: 1rem;
+
+  width: max-content;
+}
+section.banner.second-banner .container > div form {
+  justify-content: space-between;
+  width: 100%;
 }
 
 section.banner .container > img {
@@ -366,4 +375,72 @@ section.benefits > div h3 {
 }
 section.benefits > div p {
   font-size: var(--text-sm);
+}
+
+/* ––––––––––– PRICES ––––––––– */
+
+section.prices {
+  background-color: var(--color-secondary);
+}
+
+section.prices .container {
+  display: grid;
+  gap: 1rem;
+}
+section.prices .container > h2,
+section.prices .container > p {
+  color: var(--color-white);
+  text-align: center;
+}
+section.prices .container > p {
+  font-size: var(--text-xl);
+  margin-bottom: 20px;
+}
+
+section.prices .container ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+section.prices .container ul li {
+  padding: 30px 50px;
+  border-radius: 6px;
+  background-color: hsl(from var(--color-secondary) h s calc(l + 5));
+}
+section.prices .container ul li h3 {
+  font-weight: 900;
+  font-size: clamp(1.75rem, 1.6842rem + 0.2632vw, 2rem);
+  color: var(--color-white);
+}
+section.prices .container ul li p {
+  font-weight: 900;
+  font-size: var(--text-xl);
+  color: var(--color-primary);
+}
+
+section.prices .container span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+
+  margin-top: 20px;
+}
+section.prices .container span .btn-primary {
+  color: var(--color-black);
+}
+
+/* ––––––––– QNA ––––––––– */
+
+section.qna {
+  background-color: var(--bg-secondary);
+}
+
+section.qna .container h2 {
+  color: var(--color-black);
+}
+
+section.qna .container ul {
+  margin-top: 40px;
 }
