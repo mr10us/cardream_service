@@ -3,6 +3,7 @@
 section.hero {
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 section.hero .hero__content {
@@ -17,7 +18,7 @@ section.hero .hero__content::before {
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 14rem;
+  font-size: clamp(6rem, 3.8947rem + 8.4211vw, 14rem);
   line-height: 1;
   text-transform: capitalize;
   z-index: -1;
@@ -43,6 +44,12 @@ section.hero .hero__content p strong {
   font-weight: 800;
 }
 
+@media screen and (max-width: 1024px) {
+  section.hero .hero__content {
+    width: 100%;
+  }
+}
+
 /* –––––––––– BANNER ––––––––– */
 
 section.banner {
@@ -52,10 +59,7 @@ section.banner {
   background-color: var(--color-primary);
   isolation: isolate;
 }
-section.banner .container {
-  display: grid;
-  gap: 1rem;
-}
+
 section.banner .container > img {
   position: absolute;
   bottom: -20px;
@@ -65,26 +69,46 @@ section.banner .container > img {
   z-index: -1;
 }
 
-section.banner .container p {
+section.banner .container > div {
+  display: grid;
+  gap: 1rem;
+  width: max-content;
+}
+
+section.banner .container > div p {
   color: var(--color-black);
   font-size: var(--text-xl);
   font-weight: 900;
 }
 
-section.banner .container form {
+section.banner .container > div form {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: var(--color-white);
-  width: fit-content;
+  width: 100%;
   border-radius: 6px;
 }
 
-section.banner .container form input {
+section.banner .container > div form input {
   padding: 10px 20px;
   font-size: var(--text-sm);
   border: none;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
+}
+
+
+@media screen and (max-width: 640px) {
+  section.banner .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  section.banner .container > img {
+    display: none;
+  }
 }
 
 /* ––––––––––– ADVANTAGES ––––––––– */
@@ -104,7 +128,7 @@ section.advantages > ul {
 }
 section.advantages > ul li {
   display: grid;
-  grid-template-rows: repeat(2, 30px);
+  grid-template-rows: auto 1fr;
   grid-template-columns: 60px 1fr;
   column-gap: 0.5rem;
   row-gap: 6px;
@@ -185,6 +209,14 @@ section.advantages .advantages__slider-dots ul li.slick-active button {
   background-color: var(--color-secondary);
 }
 
+
+@media screen and (max-width: 768px) {
+  section.advantages > ul {
+    grid-template-columns: 1fr;
+  }
+  
+}
+
 /* ––––––––––– ABOUT ––––––––– */
 
 section.about {
@@ -204,6 +236,18 @@ section.about .container ul {
   gap: 2rem;
 
   margin-top: 80px;
+}
+
+@media screen and (max-width: 768px) {
+  section.about .container ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 480px) {
+  section.about .container ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* –––––––––– REVIEWS ––––––––– */
@@ -260,6 +304,19 @@ section.reviews .container ul li div > span {
 section.reviews .container .btn {
   margin-inline: auto;
   padding-inline: 60px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  section.reviews .container ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  section.reviews .container ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* –––––––––– SECOND BANNER ––––––––– */
@@ -329,6 +386,18 @@ section.serve ul li {
   background-color: var(--bg-secondary);
 }
 
+@media screen and (max-width: 768px) {
+  section.serve ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  section.serve ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* –––––––––––– THIRD BANNER ––––––––– */
 
 section.banner.third-banner ul {
@@ -336,6 +405,12 @@ section.banner.third-banner ul {
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin-block: 2rem;
+}
+
+section.banner.third-banner ul li {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
 }
 
 section.banner.third-banner ul li p {
@@ -347,6 +422,18 @@ section.banner.third-banner ul li p {
 section.banner.third-banner ul li p strong {
   font-size: var(--text-3xl);
   font-weight: 900;
+}
+
+@media screen and (max-width: 768px) {
+  section.banner.third-banner ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  section.banner.third-banner ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ––––––––––– BENEFITS ––––––––– */
@@ -375,6 +462,15 @@ section.benefits > div h3 {
 }
 section.benefits > div p {
   font-size: var(--text-sm);
+}
+
+@media screen and (max-width: 768px) {
+  section.benefits {
+    flex-direction: column;
+  }
+  section.benefits > img {
+    width: 100%;
+  }
 }
 
 /* ––––––––––– PRICES ––––––––– */
@@ -429,6 +525,12 @@ section.prices .container span {
 }
 section.prices .container span .btn-primary {
   color: var(--color-black);
+}
+
+@media screen and (max-width: 640px) {
+  section.prices .container ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ––––––––– QNA ––––––––– */
